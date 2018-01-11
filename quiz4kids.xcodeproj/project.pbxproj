@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B526E0091FED881B00B3FC9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0081FED881B00B3FC9E /* AppDelegate.swift */; };
-		B526E00B1FED881B00B3FC9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E00A1FED881B00B3FC9E /* ViewController.swift */; };
 		B526E00E1FED881B00B3FC9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B526E00C1FED881B00B3FC9E /* Main.storyboard */; };
 		B526E0111FED881B00B3FC9E /* quiz4kids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B526E00F1FED881B00B3FC9E /* quiz4kids.xcdatamodeld */; };
 		B526E0131FED881B00B3FC9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B526E0121FED881B00B3FC9E /* Assets.xcassets */; };
 		B526E0161FED881B00B3FC9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B526E0141FED881B00B3FC9E /* LaunchScreen.storyboard */; };
 		B526E0211FED881C00B3FC9E /* quiz4kidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0201FED881C00B3FC9E /* quiz4kidsTests.swift */; };
 		B526E02C1FED881C00B3FC9E /* quiz4kidsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E02B1FED881C00B3FC9E /* quiz4kidsUITests.swift */; };
+		B526E03A1FED888500B3FC9E /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0391FED888500B3FC9E /* Quiz.swift */; };
+		B526E03C1FED892800B3FC9E /* QuizTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E03B1FED892800B3FC9E /* QuizTypeTableViewController.swift */; };
+		B526E0401FED8B8A00B3FC9E /* QuizType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E03F1FED8B8A00B3FC9E /* QuizType.swift */; };
+		B526E0421FED8E7E00B3FC9E /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0411FED8E7E00B3FC9E /* QuizTableViewController.swift */; };
+		B526E0441FED984F00B3FC9E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0431FED984F00B3FC9E /* Colors.swift */; };
+		B526E0461FED99EE00B3FC9E /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0451FED99EE00B3FC9E /* QuizViewController.swift */; };
+		B52C8BFD1FF8A80100211C37 /* QuizTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */; };
+		B536B4511FF01CDD0044DBEA /* AudioQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */; };
+		B570C0EA1FFDF3DE00A9AC23 /* MultiLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */; };
+		B5C2E58B1FEEC90F00CACBDB /* AppleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C2E58A1FEEC90F00CACBDB /* AppleCountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,6 @@
 /* Begin PBXFileReference section */
 		B526E0051FED881B00B3FC9E /* quiz4kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quiz4kids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B526E0081FED881B00B3FC9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B526E00A1FED881B00B3FC9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B526E00D1FED881B00B3FC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B526E0101FED881B00B3FC9E /* quiz4kids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = quiz4kids.xcdatamodel; sourceTree = "<group>"; };
 		B526E0121FED881B00B3FC9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +57,16 @@
 		B526E0271FED881C00B3FC9E /* quiz4kidsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quiz4kidsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B526E02B1FED881C00B3FC9E /* quiz4kidsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quiz4kidsUITests.swift; sourceTree = "<group>"; };
 		B526E02D1FED881C00B3FC9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B526E0391FED888500B3FC9E /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		B526E03B1FED892800B3FC9E /* QuizTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTypeTableViewController.swift; sourceTree = "<group>"; };
+		B526E03F1FED8B8A00B3FC9E /* QuizType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizType.swift; sourceTree = "<group>"; };
+		B526E0411FED8E7E00B3FC9E /* QuizTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
+		B526E0431FED984F00B3FC9E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B526E0451FED99EE00B3FC9E /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTypeTableViewCell.swift; sourceTree = "<group>"; };
+		B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQuizViewController.swift; sourceTree = "<group>"; };
+		B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineViewController.swift; sourceTree = "<group>"; };
+		B5C2E58A1FEEC90F00CACBDB /* AppleCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +117,17 @@
 		B526E0071FED881B00B3FC9E /* quiz4kids */ = {
 			isa = PBXGroup;
 			children = (
+				B526E0431FED984F00B3FC9E /* Colors.swift */,
+				B526E0391FED888500B3FC9E /* Quiz.swift */,
+				B526E03F1FED8B8A00B3FC9E /* QuizType.swift */,
 				B526E0081FED881B00B3FC9E /* AppDelegate.swift */,
-				B526E00A1FED881B00B3FC9E /* ViewController.swift */,
+				B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */,
+				B526E03B1FED892800B3FC9E /* QuizTypeTableViewController.swift */,
+				B526E0411FED8E7E00B3FC9E /* QuizTableViewController.swift */,
+				B526E0451FED99EE00B3FC9E /* QuizViewController.swift */,
+				B5C2E58A1FEEC90F00CACBDB /* AppleCountViewController.swift */,
+				B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */,
+				B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */,
 				B526E00C1FED881B00B3FC9E /* Main.storyboard */,
 				B526E0121FED881B00B3FC9E /* Assets.xcassets */,
 				B526E0141FED881B00B3FC9E /* LaunchScreen.storyboard */,
@@ -196,7 +223,7 @@
 				TargetAttributes = {
 					B526E0041FED881B00B3FC9E = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					B526E01B1FED881C00B3FC9E = {
 						CreatedOnToolsVersion = 9.2;
@@ -262,9 +289,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B526E00B1FED881B00B3FC9E /* ViewController.swift in Sources */,
+				B536B4511FF01CDD0044DBEA /* AudioQuizViewController.swift in Sources */,
 				B526E0091FED881B00B3FC9E /* AppDelegate.swift in Sources */,
+				B526E0401FED8B8A00B3FC9E /* QuizType.swift in Sources */,
+				B5C2E58B1FEEC90F00CACBDB /* AppleCountViewController.swift in Sources */,
+				B526E0421FED8E7E00B3FC9E /* QuizTableViewController.swift in Sources */,
+				B526E0461FED99EE00B3FC9E /* QuizViewController.swift in Sources */,
+				B526E0441FED984F00B3FC9E /* Colors.swift in Sources */,
 				B526E0111FED881B00B3FC9E /* quiz4kids.xcdatamodeld in Sources */,
+				B526E03C1FED892800B3FC9E /* QuizTypeTableViewController.swift in Sources */,
+				B526E03A1FED888500B3FC9E /* Quiz.swift in Sources */,
+				B570C0EA1FFDF3DE00A9AC23 /* MultiLineViewController.swift in Sources */,
+				B52C8BFD1FF8A80100211C37 /* QuizTypeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,11 +466,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 67RP36HM8H;
 				INFOPLIST_FILE = quiz4kids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.whiteship.quiz4kids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2eefbefa-6e86-4eb7-a08d-abb81699f0a2";
+				PROVISIONING_PROFILE_SPECIFIER = QuizProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,11 +484,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 67RP36HM8H;
 				INFOPLIST_FILE = quiz4kids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.whiteship.quiz4kids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2eefbefa-6e86-4eb7-a08d-abb81699f0a2";
+				PROVISIONING_PROFILE_SPECIFIER = QuizProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
