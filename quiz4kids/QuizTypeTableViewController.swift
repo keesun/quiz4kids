@@ -123,25 +123,26 @@ class QuizTypeTableViewController: UITableViewController {
     }
     
     func createSpellingQuiz(wordsString: String, type: String) {
+        var quizList = [Quiz]()
+        for index in 1...20 {
+            quizList.append(Quiz.spelling(index: index, words: self.extractWords(wordsString: wordsString)))
+        }
+        self.quiz[type] = quizList
+    }
+    
+    func extractWords(wordsString: String) -> [String] {
         var words: [String] = [String]()
         
         for separatedBySpace in wordsString.components(separatedBy: " ") {
             for separatedByLineBreak in separatedBySpace.components(separatedBy: "\n") {
-                words.append(separatedByLineBreak)
+                let trimmed = separatedByLineBreak.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !trimmed.isEmpty {
+                    words.append(separatedByLineBreak)
+                }
             }
         }
         
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let wordIndex = Int(arc4random_uniform(UInt32(words.count)))
-            let word = words[wordIndex]
-            quiz.answer = word
-            quiz.question = word
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[type] = quizList
+        return words
     }
     
     func createSpellingLevel1() {

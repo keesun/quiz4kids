@@ -111,4 +111,14 @@ class Quiz {
         return quiz
     }
     
+    static func spelling(index: Int, words: [String]) -> Quiz {
+        let quiz = Quiz()
+        let wordIndex = Int(arc4random_uniform(UInt32(words.count)))
+        let word = words[wordIndex]
+        quiz.answer = word
+        quiz.question = word
+        quiz.title = "Quiz \(index)"
+        return quiz
+    }
+    
 }
