@@ -122,33 +122,7 @@ class QuizTypeTableViewController: UITableViewController {
         }
     }
     
-    func createSpellingLevel1() {
-        let wordsString = """
-        a all am an and
-        are as at away back
-        ball bell big bird blue
-        book boot box boy brown
-        but by can car cat
-        come cow day do dog
-        down end fall fan fish
-        fly food for from fun
-        get go good gray green
-        ground hog hat he here hill
-        I in into is it
-        inside kitten little look mad
-        me mud my name no
-        not of on orange out
-        paint pet pin play put
-        rain red run sad say
-        see she sing sit so
-        stay stop story sun take
-        that the them then there
-        they this to too up
-        we wet what where who 
-        will with work yellow yes
-        you zoo orange white black
-        """
-        
+    func createSpellingQuiz(wordsString: String, type: String) {
         var words: [String] = [String]()
         
         for separatedBySpace in wordsString.components(separatedBy: " ") {
@@ -167,159 +141,55 @@ class QuizTypeTableViewController: UITableViewController {
             quiz.title = "Quiz \(index)"
             quizList.append(quiz)
         }
-        self.quiz[QuizTypes.spellingLevel1] = quizList
+        self.quiz[type] = quizList
+    }
+    
+    func createSpellingLevel1() {
+        self.createSpellingQuiz(wordsString: SpellingBee.level1Words, type: QuizTypes.spellingLevel1)
     }
     
     func createSpellingLevel2() {
-        let wordsString = SpellingBee.level2Words;
-        
-        var words: [String] = [String]()
-        
-        for separatedBySpace in wordsString.components(separatedBy: " ") {
-            for separatedByLineBreak in separatedBySpace.components(separatedBy: "\n") {
-                words.append(separatedByLineBreak)
-            }
-        }
-        
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let wordIndex = Int(arc4random_uniform(UInt32(words.count)))
-            let word = words[wordIndex]
-            quiz.answer = word
-            quiz.question = word
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.spellingLevel2] = quizList
+        self.createSpellingQuiz(wordsString: SpellingBee.level2Words, type: QuizTypes.spellingLevel2)
     }
     
     func createCountLevel1Quiz() {
+        self.createQuiz(Quiz.countingLevel1, quizType: QuizTypes.countLevel1)
+    }
+    
+    func createQuiz(_ createQuiz: (Int) -> Quiz, quizType: String) {
         var quizList = [Quiz]()
         for index in 1...20 {
-            let quiz = Quiz()
-            let appleCount = Int(arc4random_uniform(10) + 1)
-            quiz.answer = String(appleCount)
-            quiz.question = "apple\(appleCount).png"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
+            quizList.append(createQuiz(index))
         }
-        self.quiz[QuizTypes.countLevel1] = quizList
+        self.quiz[quizType] = quizList
     }
     
     func createEquationLevel1() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let left = Int(arc4random_uniform(11))
-            let right = Int(arc4random_uniform(11))
-            quiz.answer = String(right)
-            quiz.question = "\(left) + ? = \(left + right)"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.equationLevel1] = quizList
+        self.createQuiz(Quiz.equationLevel1, quizType: QuizTypes.equationLevel1)
     }
     
     func createMultiplicationLevel1() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let left = Int(arc4random_uniform(8) + 2)
-            let right = Int(arc4random_uniform(9) + 1)
-            quiz.answer = String(left * right)
-            quiz.question = "\(left) ✕ \(right) = ?"
-            quiz.title = "Quiz \(index)"
-            
-            if right == 1 {
-                quiz.question += "\n\(left) ✕ \(right + 1) = \(left * (right + 1))"
-                quiz.question += "\n\(left) ✕ \(right + 2) = \(left * (right + 2))"
-            } else if right == 9 {
-                let q = quiz.question
-                quiz.question = "\(left) ✕ \(right - 2) = \(left * (right - 2))"
-                quiz.question += "\n\(left) ✕ \(right - 1) = \(left * (right - 1))"
-                quiz.question += "\n\(q)"
-            } else {
-                let q = quiz.question
-                quiz.question = "\(left) ✕ \(right - 1) = \(left * (right - 1))"
-                quiz.question += "\n\(q)"
-                quiz.question += "\n\(left) ✕ \(right + 1) = \(left * (right + 1))"
-            }                    
-            
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.multiplicationLevel1] = quizList
+        self.createQuiz(Quiz.multiplication, quizType: QuizTypes.multiplicationLevel1)
     }
     
     func createPlusLevel1Quiz() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let left = Int(arc4random_uniform(11))
-            let right = Int(arc4random_uniform(11))
-            quiz.answer = String(left + right)
-            quiz.question = "\(left) + \(right) = ?"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.plusLevel1] = quizList
+        self.createQuiz(Quiz.plusLevel1, quizType: QuizTypes.plusLevel1)
     }
     
     func createPlusLevel2Quiz() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let left = Int(arc4random_uniform(101))
-            let right = Int(arc4random_uniform(11))
-            quiz.answer = String(left + right)
-            quiz.question = "\(left) + \(right) = ?"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.plusLevel2] = quizList
-    }
-    
-    func createMinusLevel1Quiz() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let left = Int(arc4random_uniform(6) + 5)
-            let right = Int(arc4random_uniform(5))
-            quiz.answer = String(left - right)
-            quiz.question = "\(left) - \(right) = ?"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.minusLevel1] = quizList
-    }
-    
-    func createMinusLevel2Quiz() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let left = Int(arc4random_uniform(91) + 10)
-            let right = Int(arc4random_uniform(10))
-            quiz.answer = String(left - right)
-            quiz.question = "\(left) - \(right) = ?"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.minusLevel2] = quizList
+        self.createQuiz(Quiz.plusLevel2, quizType: QuizTypes.plusLevel2)
     }
     
     func createPlusLevel3Quiz() {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            let quiz = Quiz()
-            let first = Int(arc4random_uniform(11))
-            let second = Int(arc4random_uniform(11))
-            let third = Int(arc4random_uniform(11))
-            quiz.answer = String(first + second + third)
-            quiz.question = "\(first) + \(second) + \(third) = ?"
-            quiz.title = "Quiz \(index)"
-            quizList.append(quiz)
-        }
-        self.quiz[QuizTypes.plusLevel3] = quizList
+        self.createQuiz(Quiz.plusLevel3, quizType: QuizTypes.plusLevel3)
+    }
+    
+    func createMinusLevel1Quiz() {
+        self.createQuiz(Quiz.minusLevel1, quizType: QuizTypes.minusLevel1)
+    }
+    
+    func createMinusLevel2Quiz() {
+        self.createQuiz(Quiz.minusLevel2, quizType: QuizTypes.minusLevel2)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
