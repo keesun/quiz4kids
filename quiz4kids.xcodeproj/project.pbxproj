@@ -22,6 +22,7 @@
 		B526E0461FED99EE00B3FC9E /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0451FED99EE00B3FC9E /* QuizViewController.swift */; };
 		B52C8BFD1FF8A80100211C37 /* QuizTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */; };
 		B536B4511FF01CDD0044DBEA /* AudioQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */; };
+		B554C6902009A1E7005D0BBC /* SpellingBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B554C68F2009A1E7005D0BBC /* SpellingBee.swift */; };
 		B570C0EA1FFDF3DE00A9AC23 /* MultiLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */; };
 		B5C2E58B1FEEC90F00CACBDB /* AppleCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C2E58A1FEEC90F00CACBDB /* AppleCountViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		B526E0451FED99EE00B3FC9E /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTypeTableViewCell.swift; sourceTree = "<group>"; };
 		B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQuizViewController.swift; sourceTree = "<group>"; };
+		B554C68F2009A1E7005D0BBC /* SpellingBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingBee.swift; sourceTree = "<group>"; };
 		B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineViewController.swift; sourceTree = "<group>"; };
 		B5C2E58A1FEEC90F00CACBDB /* AppleCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			children = (
 				B526E0431FED984F00B3FC9E /* Colors.swift */,
 				B526E0391FED888500B3FC9E /* Quiz.swift */,
+				B554C68F2009A1E7005D0BBC /* SpellingBee.swift */,
 				B526E03F1FED8B8A00B3FC9E /* QuizType.swift */,
 				B526E0081FED881B00B3FC9E /* AppDelegate.swift */,
 				B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */,
@@ -292,6 +295,7 @@
 				B536B4511FF01CDD0044DBEA /* AudioQuizViewController.swift in Sources */,
 				B526E0091FED881B00B3FC9E /* AppDelegate.swift in Sources */,
 				B526E0401FED8B8A00B3FC9E /* QuizType.swift in Sources */,
+				B554C6902009A1E7005D0BBC /* SpellingBee.swift in Sources */,
 				B5C2E58B1FEEC90F00CACBDB /* AppleCountViewController.swift in Sources */,
 				B526E0421FED8E7E00B3FC9E /* QuizTableViewController.swift in Sources */,
 				B526E0461FED99EE00B3FC9E /* QuizViewController.swift in Sources */,

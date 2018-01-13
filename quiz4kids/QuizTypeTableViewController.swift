@@ -64,7 +64,10 @@ class QuizTypeTableViewController: UITableViewController {
         let spellingLevel1 = QuizType()
         spellingLevel1.name = QuizTypes.spellingLevel1
         
-        self.quizTypes = [countLevel1, plusLevel1, plusLevel2, plusLevel3, minusLevel1, minusLevel2, multiplicationLevel1, equationLevel1, spellingLevel1]
+        let spellingLevel2 = QuizType()
+        spellingLevel2.name = QuizTypes.spellingLevel2
+        
+        self.quizTypes = [countLevel1, plusLevel1, plusLevel2, plusLevel3, minusLevel1, minusLevel2, multiplicationLevel1, equationLevel1, spellingLevel1, spellingLevel2]
     }
     
     func getQuiz() {
@@ -77,6 +80,7 @@ class QuizTypeTableViewController: UITableViewController {
         createMultiplicationLevel1()
         createEquationLevel1()
         createSpellingLevel1()
+        createSpellingLevel2()
     }
     
     func resetQuizFor(quizType: String) -> [Quiz] {
@@ -84,6 +88,9 @@ class QuizTypeTableViewController: UITableViewController {
         case QuizTypes.spellingLevel1:
             createSpellingLevel1()
             return self.quiz[QuizTypes.spellingLevel1]!
+        case QuizTypes.spellingLevel2:
+            createSpellingLevel2()
+            return self.quiz[QuizTypes.spellingLevel2]!
         case QuizTypes.countLevel1:
             createCountLevel1Quiz()
             return self.quiz[QuizTypes.countLevel1]!
@@ -161,6 +168,30 @@ class QuizTypeTableViewController: UITableViewController {
             quizList.append(quiz)
         }
         self.quiz[QuizTypes.spellingLevel1] = quizList
+    }
+    
+    func createSpellingLevel2() {
+        let wordsString = SpellingBee.level2Words;
+        
+        var words: [String] = [String]()
+        
+        for separatedBySpace in wordsString.components(separatedBy: " ") {
+            for separatedByLineBreak in separatedBySpace.components(separatedBy: "\n") {
+                words.append(separatedByLineBreak)
+            }
+        }
+        
+        var quizList = [Quiz]()
+        for index in 1...20 {
+            let quiz = Quiz()
+            let wordIndex = Int(arc4random_uniform(UInt32(words.count)))
+            let word = words[wordIndex]
+            quiz.answer = word
+            quiz.question = word
+            quiz.title = "Quiz \(index)"
+            quizList.append(quiz)
+        }
+        self.quiz[QuizTypes.spellingLevel2] = quizList
     }
     
     func createCountLevel1Quiz() {

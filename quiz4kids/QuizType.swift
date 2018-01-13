@@ -29,4 +29,5 @@ struct QuizTypes {
     static let equationLevel1 = "Equation Level 1"
     
     static let spellingLevel1 = "Spelling Level 1"
+    static let spellingLevel2 = "Spelling Level 2"
 }

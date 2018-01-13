@@ -52,7 +52,8 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if quizType.name == QuizTypes.countLevel1 {
             performSegue(withIdentifier: "appleQuiz", sender: indexPath.row)
-        } else if quizType.name == QuizTypes.spellingLevel1 {
+        } else if (quizType.name == QuizTypes.spellingLevel1
+            || quizType.name == QuizTypes.spellingLevel2) {
             performSegue(withIdentifier: "audioQuiz", sender: indexPath.row)
         } else if quizType.name == QuizTypes.multiplicationLevel1 {
             performSegue(withIdentifier: "multiLineQuiz", sender: indexPath.row)
