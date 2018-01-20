@@ -41,6 +41,10 @@ class QuizTypeTableViewController: UITableViewController {
         countLevel1.name = QuizTypes.countLevel1
         countLevel1.quiz = CountingLevel1Quiz()
         
+        let numberLeve1 = QuizType()
+        numberLeve1.name = QuizTypes.numberLevel1
+        numberLeve1.quiz = NumberLevel1Quiz()
+        
         let plusLevel1 = QuizType()
         plusLevel1.name = QuizTypes.plusLevel1
         plusLevel1.quiz = PlusLevel1Quiz()
@@ -79,6 +83,7 @@ class QuizTypeTableViewController: UITableViewController {
         
         self.quizTypes = [
             countLevel1,
+            numberLeve1,
             plusLevel1,
             plusLevel2,
             plusLevel3,

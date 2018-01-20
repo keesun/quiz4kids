@@ -17,6 +17,7 @@ class QuizType {
 
 struct QuizTypes {
     static let countLevel1 = "Counting Level 1"
+    static let numberLevel1 = "Number Level 1"
     
     static let plusLevel1 = "Plus Level 1"
     static let plusLevel2 = "Plus Level 2"

@@ -27,6 +27,16 @@ class AudioQuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        updateKeyboardType()
+        
+    }
+    
+    func updateKeyboardType() {
+        if quiz.type == QuizTypes.numberLevel1 {
+            inputTextField.keyboardType = .decimalPad
+        } else {
+            inputTextField.keyboardType = .default
+        }
     }
     
     func updateView() {
