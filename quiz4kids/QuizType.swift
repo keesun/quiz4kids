@@ -12,6 +12,7 @@ class QuizType {
     var name = ""
     var total = 0
     var resolved = 0
+    var quiz = Quiz()
 }
 
 struct QuizTypes {

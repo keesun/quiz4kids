@@ -9,10 +9,13 @@
 import Foundation
 
 class SpellingLevel2Quiz: SpellingQuiz {
-    override init(index: Int) {
-        super.init(index: index)
-        self.type = QuizTypes.spellingLevel2
+    
+    override func create(index: Int) -> Quiz {
+        let quiz = super.create(index: index)
+        quiz.type = QuizTypes.spellingLevel2
+        return quiz
     }
+
     
     override func wordsString() -> String {
         return """

@@ -9,13 +9,15 @@
 import Foundation
 
 class MinusLevel1Quiz : Quiz {
-    init(index: Int) {
-        super.init()
+    
+    override func create(index: Int) -> Quiz {
+        let quiz = MinusLevel1Quiz()
         let left = Int(arc4random_uniform(6) + 5)
         let right = Int(arc4random_uniform(5))
-        self.answer = String(left - right)
-        self.question = "\(left) - \(right) = ?"
-        self.title = "Quiz \(index)"
-        self.type = QuizTypes.minusLevel1
+        quiz.answer = String(left - right)
+        quiz.question = "\(left) - \(right) = ?"
+        quiz.title = "Quiz \(index)"
+        quiz.type = QuizTypes.minusLevel1
+        return quiz
     }
 }

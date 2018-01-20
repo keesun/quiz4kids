@@ -9,14 +9,16 @@
 import Foundation
 
 class PlusLevel3Quiz : Quiz {
-    init(index: Int) {
-        super.init()
+    
+    override func create(index: Int) -> Quiz {
+        let quiz = PlusLevel3Quiz()
         let first = Int(arc4random_uniform(11))
         let second = Int(arc4random_uniform(11))
         let third = Int(arc4random_uniform(11))
-        self.answer = String(first + second + third)
-        self.question = "\(first) + \(second) + \(third) = ?"
-        self.title = "Quiz \(index)"
-        self.type = QuizTypes.plusLevel3
+        quiz.answer = String(first + second + third)
+        quiz.question = "\(first) + \(second) + \(third) = ?"
+        quiz.title = "Quiz \(index)"
+        quiz.type = QuizTypes.plusLevel3
+        return quiz
     }
 }

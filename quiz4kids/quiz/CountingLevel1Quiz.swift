@@ -9,11 +9,13 @@
 import Foundation
 
 class CountingLevel1Quiz: Quiz {
-    init(index: Int) {
-        super.init()
+    
+    override func create(index: Int) -> Quiz {
+        let quiz = CountingLevel1Quiz()
         let appleCount = Int(arc4random_uniform(10) + 1)
-        self.answer = String(appleCount)
-        self.question = "apple\(appleCount).png"
-        self.title = "Quiz \(index)"
+        quiz.answer = String(appleCount)
+        quiz.question = "apple\(appleCount).png"
+        quiz.title = "Quiz \(index)"
+        return quiz
     }
 }

@@ -39,158 +39,75 @@ class QuizTypeTableViewController: UITableViewController {
     func getQuizType() {
         let countLevel1 = QuizType()
         countLevel1.name = QuizTypes.countLevel1
+        countLevel1.quiz = CountingLevel1Quiz()
         
         let plusLevel1 = QuizType()
         plusLevel1.name = QuizTypes.plusLevel1
+        plusLevel1.quiz = PlusLevel1Quiz()
         
         let minusLevel1 = QuizType()
         minusLevel1.name = QuizTypes.minusLevel1
+        minusLevel1.quiz = MinusLevel1Quiz()
         
         let plusLevel2 = QuizType()
         plusLevel2.name = QuizTypes.plusLevel2
+        plusLevel2.quiz = PlusLevel2Quiz()
         
         let minusLevel2 = QuizType()
         minusLevel2.name = QuizTypes.minusLevel2
+        minusLevel2.quiz = MinusLevel2Quiz()
         
         let plusLevel3 = QuizType()
         plusLevel3.name = QuizTypes.plusLevel3
+        plusLevel3.quiz = PlusLevel3Quiz()
         
         let multiplicationLevel1 = QuizType()
         multiplicationLevel1.name = QuizTypes.multiplicationLevel1
+        multiplicationLevel1.quiz = MultiplicationLevel1Quiz()
         
         let equationLevel1 = QuizType()
         equationLevel1.name = QuizTypes.equationLevel1
+        equationLevel1.quiz = EquationLevel1Quiz()
         
         let spellingLevel1 = QuizType()
         spellingLevel1.name = QuizTypes.spellingLevel1
+        spellingLevel1.quiz = SpellingLevel1Quiz()
         
         let spellingLevel2 = QuizType()
         spellingLevel2.name = QuizTypes.spellingLevel2
+        spellingLevel2.quiz = SpellingLevel2Quiz()
         
-        self.quizTypes = [countLevel1, plusLevel1, plusLevel2, plusLevel3, minusLevel1, minusLevel2, multiplicationLevel1, equationLevel1, spellingLevel1, spellingLevel2]
+        self.quizTypes = [
+            countLevel1,
+            plusLevel1,
+            plusLevel2,
+            plusLevel3,
+            minusLevel1,
+            minusLevel2,
+            multiplicationLevel1,
+            equationLevel1,
+            spellingLevel1,
+            spellingLevel2
+        ]
     }
     
     func getQuiz() {
-        createCountLevel1Quiz()
-        createPlusLevel1Quiz()
-        createPlusLevel2Quiz()
-        createMinusLevel1Quiz()
-        createMinusLevel2Quiz()
-        createPlusLevel3Quiz()
-        createMultiplicationLevel1()
-        createEquationLevel1()
-        createSpellingLevel1()
-        createSpellingLevel2()
-    }
-    
-    func resetQuizFor(quizType: String) -> [Quiz] {
-        switch quizType {
-        case QuizTypes.spellingLevel1:
-            createSpellingLevel1()
-            return self.quiz[QuizTypes.spellingLevel1]!
-        case QuizTypes.spellingLevel2:
-            createSpellingLevel2()
-            return self.quiz[QuizTypes.spellingLevel2]!
-        case QuizTypes.countLevel1:
-            createCountLevel1Quiz()
-            return self.quiz[QuizTypes.countLevel1]!
-        case QuizTypes.plusLevel1:
-            createPlusLevel1Quiz()
-            return self.quiz[QuizTypes.plusLevel1]!
-        case QuizTypes.plusLevel2:
-            createPlusLevel2Quiz()
-            return self.quiz[QuizTypes.plusLevel2]!
-        case QuizTypes.minusLevel1:
-            createMinusLevel1Quiz()
-            return self.quiz[QuizTypes.minusLevel1]!
-        case QuizTypes.minusLevel2:
-            createMinusLevel1Quiz()
-            return self.quiz[QuizTypes.minusLevel2]!
-        case QuizTypes.plusLevel3:
-            createPlusLevel3Quiz()
-            return self.quiz[QuizTypes.plusLevel3]!
-        case QuizTypes.multiplicationLevel1:
-            createMultiplicationLevel1()
-            return self.quiz[QuizTypes.multiplicationLevel1]!
-        case QuizTypes.equationLevel1:
-            createEquationLevel1()
-            return self.quiz[QuizTypes.equationLevel1]!
-            
-        default:
-            print("wrong type")
-            return [Quiz]()
-        }
-    }
-    
-    func createSpellingQuiz(wordsString: String, type: String) {
-        var quizList = [Quiz]()
-        for index in 1...20 {
-            quizList.append(Quiz.spelling(index: index, words: self.extractWords(wordsString: wordsString)))
-        }
-        self.quiz[type] = quizList
-    }
-    
-    func extractWords(wordsString: String) -> [String] {
-        var words: [String] = [String]()
-        
-        for separatedBySpace in wordsString.components(separatedBy: " ") {
-            for separatedByLineBreak in separatedBySpace.components(separatedBy: "\n") {
-                let trimmed = separatedByLineBreak.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !trimmed.isEmpty {
-                    words.append(separatedByLineBreak)
-                }
+        for quizType in self.quizTypes {
+            var quizList = [Quiz]()
+            for index in 1...20 {
+                quizList.append(quizType.quiz.create(index: index))
             }
+            self.quiz[quizType.name] = quizList
         }
-        
-        return words
     }
     
-    func createSpellingLevel1() {
-        self.createSpellingQuiz(wordsString: SpellingBee.level1Words, type: QuizTypes.spellingLevel1)
-    }
-    
-    func createSpellingLevel2() {
-        self.createSpellingQuiz(wordsString: SpellingBee.level2Words, type: QuizTypes.spellingLevel2)
-    }
-    
-    func createCountLevel1Quiz() {
-        self.createQuiz(Quiz.countingLevel1, quizType: QuizTypes.countLevel1)
-    }
-    
-    func createQuiz(_ createQuiz: (Int) -> Quiz, quizType: String) {
+    func resetQuizFor(quizType: QuizType) -> [Quiz] {
         var quizList = [Quiz]()
         for index in 1...20 {
-            quizList.append(createQuiz(index))
+            quizList.append(quizType.quiz.create(index: index))
         }
-        self.quiz[quizType] = quizList
-    }
-    
-    func createEquationLevel1() {
-        self.createQuiz(Quiz.equationLevel1, quizType: QuizTypes.equationLevel1)
-    }
-    
-    func createMultiplicationLevel1() {
-        self.createQuiz(Quiz.multiplication, quizType: QuizTypes.multiplicationLevel1)
-    }
-    
-    func createPlusLevel1Quiz() {
-        self.createQuiz(Quiz.plusLevel1, quizType: QuizTypes.plusLevel1)
-    }
-    
-    func createPlusLevel2Quiz() {
-        self.createQuiz(Quiz.plusLevel2, quizType: QuizTypes.plusLevel2)
-    }
-    
-    func createPlusLevel3Quiz() {
-        self.createQuiz(Quiz.plusLevel3, quizType: QuizTypes.plusLevel3)
-    }
-    
-    func createMinusLevel1Quiz() {
-        self.createQuiz(Quiz.minusLevel1, quizType: QuizTypes.minusLevel1)
-    }
-    
-    func createMinusLevel2Quiz() {
-        self.createQuiz(Quiz.minusLevel2, quizType: QuizTypes.minusLevel2)
+        self.quiz[quizType.name] = quizList
+        return self.quiz[quizType.name]!
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

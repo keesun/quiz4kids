@@ -23,7 +23,6 @@
 		B526E0461FED99EE00B3FC9E /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526E0451FED99EE00B3FC9E /* QuizViewController.swift */; };
 		B52C8BFD1FF8A80100211C37 /* QuizTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */; };
 		B536B4511FF01CDD0044DBEA /* AudioQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */; };
-		B554C6902009A1E7005D0BBC /* SpellingBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B554C68F2009A1E7005D0BBC /* SpellingBee.swift */; };
 		B570C0EA1FFDF3DE00A9AC23 /* MultiLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */; };
 		B572832A2012D6B10038DAF2 /* PlusLevel1Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57283292012D6B10038DAF2 /* PlusLevel1Quiz.swift */; };
 		B572832C2012D8130038DAF2 /* PlusLevel2Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572832B2012D8130038DAF2 /* PlusLevel2Quiz.swift */; };
@@ -78,7 +77,6 @@
 		B526E0451FED99EE00B3FC9E /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTypeTableViewCell.swift; sourceTree = "<group>"; };
 		B536B4501FF01CDD0044DBEA /* AudioQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioQuizViewController.swift; sourceTree = "<group>"; };
-		B554C68F2009A1E7005D0BBC /* SpellingBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingBee.swift; sourceTree = "<group>"; };
 		B570C0E91FFDF3DE00A9AC23 /* MultiLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineViewController.swift; sourceTree = "<group>"; };
 		B57283292012D6B10038DAF2 /* PlusLevel1Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusLevel1Quiz.swift; sourceTree = "<group>"; };
 		B572832B2012D8130038DAF2 /* PlusLevel2Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusLevel2Quiz.swift; sourceTree = "<group>"; };
@@ -141,12 +139,10 @@
 		B526E0071FED881B00B3FC9E /* quiz4kids */ = {
 			isa = PBXGroup;
 			children = (
-				B57283282012D68A0038DAF2 /* quiz */,
-				B526E0431FED984F00B3FC9E /* Colors.swift */,
-				B526E0391FED888500B3FC9E /* Quiz.swift */,
-				B554C68F2009A1E7005D0BBC /* SpellingBee.swift */,
-				B526E03F1FED8B8A00B3FC9E /* QuizType.swift */,
 				B526E0081FED881B00B3FC9E /* AppDelegate.swift */,
+				B526E0431FED984F00B3FC9E /* Colors.swift */,
+				B526E03F1FED8B8A00B3FC9E /* QuizType.swift */,
+				B57283282012D68A0038DAF2 /* quiz */,
 				B52C8BFC1FF8A80100211C37 /* QuizTypeTableViewCell.swift */,
 				B526E03B1FED892800B3FC9E /* QuizTypeTableViewController.swift */,
 				B526E0411FED8E7E00B3FC9E /* QuizTableViewController.swift */,
@@ -184,6 +180,7 @@
 		B57283282012D68A0038DAF2 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
+				B526E0391FED888500B3FC9E /* Quiz.swift */,
 				B57283292012D6B10038DAF2 /* PlusLevel1Quiz.swift */,
 				B572832B2012D8130038DAF2 /* PlusLevel2Quiz.swift */,
 				B572832D2012D92C0038DAF2 /* PlusLevel3Quiz.swift */,
@@ -340,7 +337,6 @@
 				B572833E2012DE2E0038DAF2 /* SpellingLevel1Quiz.swift in Sources */,
 				B57283382012DAA30038DAF2 /* CountingLevel1Quiz.swift in Sources */,
 				B57283362012DA730038DAF2 /* EquationLevel1Quiz.swift in Sources */,
-				B554C6902009A1E7005D0BBC /* SpellingBee.swift in Sources */,
 				B5C2E58B1FEEC90F00CACBDB /* AppleCountViewController.swift in Sources */,
 				B526E0421FED8E7E00B3FC9E /* QuizTableViewController.swift in Sources */,
 				B572832C2012D8130038DAF2 /* PlusLevel2Quiz.swift in Sources */,

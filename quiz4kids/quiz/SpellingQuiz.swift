@@ -10,14 +10,15 @@ import Foundation
 
 class SpellingQuiz : Quiz {
     
-    init(index: Int) {
-        super.init()
+    override func create(index: Int) -> Quiz {
+        let quiz = SpellingQuiz()
         let words = self.extractWords(self.wordsString())
         let wordIndex = Int(arc4random_uniform(UInt32(words.count)))
         let word = words[wordIndex]
-        self.answer = word
-        self.question = word
-        self.title = "Quiz \(index)"
+        quiz.answer = word
+        quiz.question = word
+        quiz.title = "Quiz \(index)"
+        return quiz
     }
 
     func extractWords(_ wordsString: String) -> [String] {
