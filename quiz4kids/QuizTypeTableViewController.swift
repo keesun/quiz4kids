@@ -107,11 +107,20 @@ class QuizTypeTableViewController: UITableViewController {
     }
     
     func resetQuizFor(quizType: QuizType) -> [Quiz] {
+        // re-create quiz for the quiz type
         var quizList = [Quiz]()
         for index in 1...20 {
             quizList.append(quizType.quiz.create(index: index))
         }
         self.quiz[quizType.name] = quizList
+        
+        // reset resolved count for the quiz type
+        for qt in self.quizTypes {
+            if qt.quiz === quizType.quiz {
+                qt.resolved = 0
+            }
+        }
+        
         return self.quiz[quizType.name]!
     }
     
@@ -130,6 +139,8 @@ class QuizTypeTableViewController: UITableViewController {
         
         if quizType.resolved == quizType.total {
             cell.backgroundColor = Colors.green
+        } else {
+            cell.backgroundColor = UIColor.white
         }
         
         return cell
