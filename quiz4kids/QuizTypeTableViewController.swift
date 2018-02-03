@@ -98,11 +98,31 @@ class QuizTypeTableViewController: UITableViewController {
     
     func getQuiz() {
         for quizType in self.quizTypes {
-            var quizList = [Quiz]()
-            for index in 1...20 {
+            let quizList = self.createQuizList(quizType: quizType)
+            self.quiz[quizType.name] = quizList
+        }
+    }
+    
+    func createQuizList(quizType:QuizType) -> [Quiz] {
+        var quizList = [Quiz]()
+        for index in 1...20 {
+            if quizList.count > 1 {
+                let previousQuiz = quizList[index - 2]
+                let newQuiz = self.createAQuiz(quizType: quizType, index: index, previousQuiz: previousQuiz)
+                quizList.append(newQuiz)
+            } else {
                 quizList.append(quizType.quiz.create(index: index))
             }
-            self.quiz[quizType.name] = quizList
+        }
+        return quizList
+    }
+    
+    func createAQuiz(quizType:QuizType, index: Int, previousQuiz: Quiz) -> Quiz {
+        let newQuiz = quizType.quiz.create(index: index)
+        if previousQuiz.answer != newQuiz.answer {
+            return newQuiz
+        } else {
+            return createAQuiz(quizType: quizType, index: index, previousQuiz: previousQuiz)
         }
     }
     
