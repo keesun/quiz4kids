@@ -13,6 +13,7 @@ class QuizViewController: UIViewController {
     var quiz = Quiz()
     var quizList = [Quiz]()
     var index = 0
+    var horizontal = true
 
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
@@ -27,7 +28,33 @@ class QuizViewController: UIViewController {
     
     func updateView() {
         navigationItem.title = quiz.title + " / 20"
-        questionLabel.text = quiz.question
+        
+        if (horizontal) {
+            // 5 + 3 = ?
+            questionLabel.text = quiz.question
+            questionLabel.textAlignment = .left;
+        } else {
+            //         5
+            //      + 13
+            // ----------
+            //         ?
+            let splits = quiz.question.components(separatedBy: " ")
+            if (splits.count < 3) {
+                questionLabel.text = quiz.question
+                questionLabel.textAlignment = .left;
+                horizontal = true
+            } else {
+                questionLabel.numberOfLines = 4
+                let left = splits[0]
+                let operand = splits[1]
+                let right = splits[2]
+                questionLabel.textAlignment = .right;
+                var quizQuestion = left + "\n"
+                quizQuestion += operand + " " + right
+                quizQuestion += "\n" + "---------" + "\n?"
+                questionLabel.text = quizQuestion
+            }
+        }
         
         if let inputValue = quiz.input {
             inputTextField.text = inputValue
@@ -83,6 +110,11 @@ class QuizViewController: UIViewController {
     @IBAction func inputEditing(_ sender: Any) {
         checkButton.isHidden = false
         nextButtonHideOrShow()
+    }
+    
+    @IBAction func refareshTapped(_ sender: Any) {
+        horizontal = !horizontal
+        updateView()
     }
     
 }
