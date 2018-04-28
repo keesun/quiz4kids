@@ -34,24 +34,44 @@ class QuizViewController: UIViewController {
             questionLabel.text = quiz.question
             questionLabel.textAlignment = .left;
         } else {
-            //         5
-            //      + 13
-            // ----------
-            //         ?
             let splits = quiz.question.components(separatedBy: " ")
             if (splits.count < 3) {
                 questionLabel.text = quiz.question
                 questionLabel.textAlignment = .left;
                 horizontal = true
-            } else {
+                //         5
+                //      + 13
+                // ----------
+                //         ?
+            } else if (splits.count == 5) {
                 questionLabel.numberOfLines = 4
-                let left = splits[0]
+                let a = splits[0]
                 let operand = splits[1]
-                let right = splits[2]
-                questionLabel.textAlignment = .right;
-                var quizQuestion = left + "\n"
-                quizQuestion += operand + " " + right
-                quizQuestion += "\n" + "---------" + "\n?"
+                let b = splits[2]
+                let c = splits[4]
+                questionLabel.textAlignment = .right
+                var quizQuestion = a + "\n"
+                quizQuestion += operand + " " + b
+                quizQuestion += "\n" + "---------" + "\n" + c
+                questionLabel.text = quizQuestion
+            } else {
+                //         5
+                //      +  3
+                //      +  2
+                // ----------
+                //         ?
+                questionLabel.numberOfLines = 5
+                let a = splits[0]
+                let oper1 = splits[1]
+                let b = splits[2]
+                let oper2 = splits[3]
+                let c = splits[4]
+                let d = splits[6]
+                questionLabel.textAlignment = .right
+                var quizQuestion = a + "\n"
+                quizQuestion += oper1 + " " + b + "\n"
+                quizQuestion += oper2 + " " + c + "\n"
+                quizQuestion += "---------" + "\n" + d
                 questionLabel.text = quizQuestion
             }
         }
